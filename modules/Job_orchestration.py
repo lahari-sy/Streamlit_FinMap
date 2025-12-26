@@ -18,56 +18,6 @@ from config.user_config import USER_CONFIG, JOB_CONFIG,API_CONFIG
 
 st.set_page_config(page_title="Job Orchestration", page_icon="🔄", layout="wide")
 
-# ============================================
-# SECRETS & SESSION
-# ============================================
-
-# @st.cache_data(ttl=3600)
-# def get_secrets():
-#     """Load all secrets from Snowflake"""
-#     try:
-#         session = get_active_session()
-        
-#         # Get general config (Power BI + dbt auth)
-#         general_result = '''{
-#                   "client_id": "e5df0a0c-107c-4bd2-8229-1a85d2860d4b",
-#                   "client_secret": "VeJ8Q~rSBlXl4zorNuf0mwz9iXE6YAPGuyQr5bXQ",
-#                   "tenant_id": "e576405c-f3a1-4c1d-b1c2-7a7207f47721",
-#                   "account_id": "70471823488007",
-#                   "dbt_api_token": "dbtu_n9MVfyEDe-wC3TXGQ3DwxyKkhntJPnc_5QH3WJVE030QHL3Hv0"
-#                   }'''
-        
-#         # Get job config (company-specific IDs)
-#         job_result = '''{
-#               "wagway": {
-#                 "workspace_id": "ff2167d0-61dd-4252-b5ff-97ba1cf0977c",
-#                 "dataset_id": "f4f1277b-3433-4beb-b730-0cf5da20e7f5",
-#                 "dbt_coa_job_id": "70471823539587",
-#                 "dbt_adj_job_id": "70471823539587",
-#                 "dbt_coa_adj_id": "70471823539587"
-#               },
-#               "playfly": {
-#                 "workspace_id": "workspace-id-2",
-#                 "dataset_id": "dataset-id-2",
-#                 "dbt_coa_job_id": "12348",
-#                 "dbt_adj_job_id": "12349",
-#                 "dbt_coa_adj_id": "12350"}}'''
-                    
-#         if general_result and job_result:
-#             return {
-#                 'general': json.loads(general_result[0][0]),
-#                 'jobs': json.loads(job_result[0][0])
-#             }
-#         return None
-#     except Exception as e:
-#         st.error(f"Error loading secrets: {e}")
-#         return None
-
-# secrets = get_secrets()
-
-# if not secrets:
-#     st.error("❌ Failed to load configuration")
-#     st.stop()
 
 general_config = API_CONFIG
 # job_config = secrets['jobs']
